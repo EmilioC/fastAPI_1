@@ -10,6 +10,15 @@ from fastapi import FastAPI
 
 app = FastAPI() 
 
+# Models
+
+class Person(BaseModel):
+    first_name: str
+    last_name: str
+    age: int
+    hair_color: Optional (str)
+    is_married: Optional (bool)
+
 """ En el home vamos a ejecutar la aplicación """
 @app.get("/") 
 def home():

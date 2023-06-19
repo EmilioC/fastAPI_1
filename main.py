@@ -12,7 +12,6 @@ from fastapi import Body
 app = FastAPI() 
 
 # Models
-
 class Person(BaseModel):
     first_name: str
     last_name: str

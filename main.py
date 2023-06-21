@@ -15,6 +15,12 @@ from fastapi import Body, Query, Path
 app = FastAPI() 
 
 # Models
+
+class Location (BaseModel):
+    city: str
+    state: str
+    country: str
+    
 class Person(BaseModel):
     first_name: str
     last_name: str
@@ -78,6 +84,9 @@ def update_person(
         description="This is the person ID",
         gt=0
     ),
-        person: Person = Body (...)
+        person: Person = Body (...),
+        location: Location = Body(...)
 ):
-    return person
+    results = person.dict()
+    results.update(location.dict())
+    return results

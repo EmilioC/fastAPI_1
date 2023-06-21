@@ -45,7 +45,7 @@ class Person(BaseModel):
         gt=0,
         le=115
     )
-    hair_color: Optional [str] = None
+    hair_color: Optional [HairColor] = Field (default= None)
     is_married: Optional [bool] = Field (default=None)
 
 """ En el home vamos a ejecutar la aplicación """
